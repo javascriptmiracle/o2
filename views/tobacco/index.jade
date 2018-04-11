@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Tobacco List
+  body
+    h3 Tobacco List
+    br
+    a(href="/tobacco/add") Add
+    br
+    table(border="1")
+      tr
+        th id
+        th Name
+        th Amount
+        th Price
+        th Country
+        th Action
+      each tobacco in tobaccos
+        tr
+          td #{tobacco.id}
+          td #{tobacco.name}
+          td #{tobacco.amount}
+          td #{tobacco.price}
+          td #{tobacco.country} 
+          td
+            a(href="/tobacco/edit/" + tobacco.id) Edit
+            | 
+            a(href="/tobacco/delete/" + tobacco.id, onclick="return confirm('Are u sure?')") Delete
